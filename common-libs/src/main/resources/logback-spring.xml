@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+
+    <!-- Standard Console Appender for DEV -->
+    <appender name="CONSOLE_DEV" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!-- JSON Logstash Appender for PROD and UAT -->
+    <appender name="JSON_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <customFields>{"app_name":"${springAppName}"}</customFields>
+            <fieldNames>
+                <timestamp>timestamp</timestamp>
+                <thread>thread_name</thread>
+                <logger>logger_name</logger>
+                <level>level</level>
+                <message>message</message>
+            </fieldNames>
+            <includeMdcKeyName>traceId</includeMdcKeyName>
+            <includeMdcKeyName>spanId</includeMdcKeyName>
+            <includeMdcKeyName>orgId</includeMdcKeyName>
+            <includeMdcKeyName>userId</includeMdcKeyName>
+            <includeMdcKeyName>requestId</includeMdcKeyName>
+            <includeMdcKeyName>endpoint</includeMdcKeyName>
+        </encoder>
+    </appender>
+
+    <springProfile name="prod | uat">
+        <root level="INFO">
+            <appender-ref ref="JSON_CONSOLE"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="!prod &amp; !uat">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE_DEV"/>
+        </root>
+    </springProfile>
+
+</configuration>

@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: common-libs
+  main:
+    allow-bean-definition-overriding: true
+  
+  # AOP configuration
+  aop:
+    auto: true
+    proxy-target-class: true
+  
+  # Actuator Endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus,info,env
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    export:
+      prometheus:
+        enabled: true
+        
+app:
+  aop:
+    logging:
+      enabled: true
+      mask-fields: password, token, otp, ssn, cardNumber, aadhaar, phone, email, authorization
+    execution-time:
+      enabled: true
+      slow-method-threshold-ms: 500

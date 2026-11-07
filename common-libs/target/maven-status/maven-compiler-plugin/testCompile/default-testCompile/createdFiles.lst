@@ -1,0 +1,9 @@
+com\luminacare\common\cache\CacheIntegrationTest.class
+com\luminacare\common\aspect\AspectOrderTest.class
+com\luminacare\common\cache\CacheIntegrationTest$DummyService.class
+com\luminacare\common\cache\ConcurrencyTest.class
+com\luminacare\common\aspect\OrganizationAspectTest.class
+com\luminacare\common\resilience\CircuitBreakerTest.class
+com\luminacare\common\aspect\ExecutionTimeAspectTest.class
+com\luminacare\common\cache\CacheIntegrationTest$TestConfig.class
+com\luminacare\common\cache\MultiTenantIsolationTest.class

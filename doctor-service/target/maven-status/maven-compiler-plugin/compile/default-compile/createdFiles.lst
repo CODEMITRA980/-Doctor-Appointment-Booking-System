@@ -1,0 +1,10 @@
+com\luminacare\doctorservice\DoctorServiceApplication.class
+com\luminacare\doctorservice\controller\DoctorController.class
+com\luminacare\doctorservice\repository\DoctorRepository.class
+com\luminacare\doctorservice\entity\Doctor.class
+com\luminacare\doctorservice\event\DoctorEventProducer.class
+com\luminacare\doctorservice\repository\DoctorAvailabilityRepository.class
+com\luminacare\doctorservice\entity\DoctorAvailability$DoctorAvailabilityBuilder.class
+com\luminacare\doctorservice\entity\DoctorAvailability.class
+com\luminacare\doctorservice\service\DoctorService.class
+com\luminacare\doctorservice\entity\Doctor$DoctorBuilder.class

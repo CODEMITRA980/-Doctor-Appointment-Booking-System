@@ -1,0 +1,10 @@
+com\luminacare\appointmentservice\entity\Appointment.class
+com\luminacare\appointmentservice\event\KafkaEventConsumer.class
+com\luminacare\appointmentservice\AppointmentServiceApplication.class
+com\luminacare\appointmentservice\event\AppointmentEventProducer.class
+com\luminacare\appointmentservice\client\PatientClient.class
+com\luminacare\appointmentservice\service\AppointmentService.class
+com\luminacare\appointmentservice\entity\Appointment$AppointmentBuilder.class
+com\luminacare\appointmentservice\repository\AppointmentRepository.class
+com\luminacare\appointmentservice\client\DoctorClient.class
+com\luminacare\appointmentservice\controller\AppointmentController.class

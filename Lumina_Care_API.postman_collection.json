@@ -1,0 +1,95 @@
+{
+  "info": {
+    "name": "Lumina Care API - MultiTenant",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Patient (OrgA)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Org-Id",
+            "value": "orgA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/patients/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "patients",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Patient (OrgB) - Isolation Check",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Org-Id",
+            "value": "orgB",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/patients/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "patients",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Patient (Triggers Eviction)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "X-Org-Id",
+            "value": "orgA",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"firstName\": \"UpdatedName\",\n    \"lastName\": \"Doe\",\n    \"phone\": \"555-1234\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/patients/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "patients",
+            "1"
+          ]
+        }
+      }
+    }
+  ]
+}

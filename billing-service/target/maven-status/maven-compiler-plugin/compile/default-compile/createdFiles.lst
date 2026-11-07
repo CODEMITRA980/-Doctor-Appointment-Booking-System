@@ -1,0 +1,7 @@
+com\luminacare\billingservice\entity\Bill$BillBuilder.class
+com\luminacare\billingservice\repository\BillRepository.class
+com\luminacare\billingservice\BillingServiceApplication.class
+com\luminacare\billingservice\controller\BillingController.class
+com\luminacare\billingservice\event\AppointmentEventConsumer.class
+com\luminacare\billingservice\entity\Bill.class
+com\luminacare\billingservice\service\BillingService.class
